@@ -181,4 +181,4 @@ bot.on('messageDelete', async (message) => {
   logs.send(`A message was deleted in ${message.channel.name} by ${user}`);
 })
 
-bot.login(process.env.token)
+bot.login(config.token)
