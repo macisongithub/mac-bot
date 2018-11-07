@@ -3,14 +3,12 @@ const bot = new Discord.Client();
 const fs = require('fs');
 const db = require('quick.db');
 
-const config = require("./config.json");
-
 const func = require('./functions.js');
 console.log(func)
 
 const commands = JSON.parse(fs.readFileSync('Storage/commands.json', 'utf8'));
 
-const prefix = config.prefix;
+const prefix = "m!";
 
 bot.mutes = require("./mutes.json");
 
@@ -45,7 +43,7 @@ bot.on('message', message => {
 
     })
 
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith ===m!) return;
 
     // Command Handler
     try {
@@ -94,13 +92,13 @@ bot.on('ready', () => {
 bot.on("guildCreate", guild => {
 
   bot.guilds.get("387623524891623434").channels.get("393076814769160195").send(`:envelope_with_arrow: OAuth joined ${guild.name} (${guild.id}). I am now in ${bot.guilds.size}.`);
-  bot.user.setGame(`>>help | ${bot.guilds.size} servers`);
+  bot.user.setGame(`m!help | ${bot.guilds.size} servers`);
 });
 
 bot.on("guildDelete", guild => {
 
   bot.guilds.get("387623524891623434").channels.get("393076814769160195").send(`:leaves: Left ${guild.name} (${guild.id}). I am now in ${bot.guilds.size}.`);
-  bot.user.setGame(`>>help | ${bot.guilds.size} servers`);
+  bot.user.setGame(`m!help | ${bot.guilds.size} servers`);
 });
 
 bot.on('guildMemberAdd', member => {
@@ -181,4 +179,4 @@ bot.on('messageDelete', async (message) => {
   logs.send(`A message was deleted in ${message.channel.name} by ${user}`);
 })
 
-bot.login(config.token)
+bot.login(process.env.BOT_TOKEN);
