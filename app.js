@@ -2,13 +2,11 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
 
-const config = require("./config.json");
-
 client.on("ready", () => {
   console.log(`Launched. Defined as BOT. Username is ${client.user.username}.`);
 });
 
-const prefix = config.prefix;
+const prefix = "m!";
 
 client.on("message", (message) => {
   const args = message.content.split(" ").slice(1);
@@ -21,8 +19,8 @@ client.on("message", (message) => {
     message.channel.send("Well done.");
   }
 
-    if (message.content.startsWith(config.prefix + "rs")) {
-    if(message.author.id !== config.ownerID) return;
+    if (message.content.startsWith("m!" + "rs")) {
+    if(message.author.id !== "295978095129657355") return;
     switch(message.content.toLowerCase()) {
         case 'm!rs':
             resetBot(message.channel);
@@ -33,11 +31,11 @@ client.on("message", (message) => {
 function resetBot(channel) {
     message.channel.send('πx6÷2149-54+2948')
     .then(msg => client.destroy())
-    .then(() => client.login(config.token));
+    .then(() => client.login(process.env.BOT_TOKEN));
 }
 
-if (message.content.startsWith(config.prefix + "deadify")) {
-  if(message.author.id !== config.ownerID) return;
+if (message.content.startsWith("m!" + "deadify")) {
+  if(message.author.id !== "295978095129657355") return;
   switch(message.content.toLowerCase()) {
       case 'm!deadify':
           sleepBot(message.channel);
@@ -50,8 +48,8 @@ function sleepBot(channel) {
   .then(msg => client.destroy())
 }
 
-  if (message.content.startsWith(config.prefix + "skarff")) {
-    if(message.author.id !== config.ownerID) return;
+  if (message.content.startsWith("m!" + "skarff")) {
+    if(message.author.id !== "295978095129657355") return;
     message.channel.send("<@270252850121146369>")
     message.channel.send("<@270252850121146369>")
     message.channel.send("<@270252850121146369>")
@@ -65,15 +63,15 @@ function sleepBot(channel) {
 
   mention = message.mentions.users.first();
 
-  if (message.content.startsWith(config.prefix + "send")) {
+  if (message.content.startsWith("m!" + "send")) {
     if (mention == null) { return; }
     message.delete();
     mentionMessage = message.content.slice (8);
     mention.send (mentionMessage);
   }
 
-  if (message.content.startsWith(config.prefix + "eval")) {
-    if(message.author.id !== config.ownerID) return;
+  if (message.content.startsWith("m!" + "eval")) {
+    if(message.author.id !== "295978095129657355") return;
     try {
       const code = args.join(" ");
       let evaled = eval(code);
@@ -98,4 +96,4 @@ function clean(text) {
   }
 }
 
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
