@@ -22,14 +22,14 @@ client.on("message", (message) => {
     if (message.content.startsWith("m!" + "rs")) {
     if(message.author.id !== "295978095129657355") return;
     switch(message.content.toLowerCase()) {
-        case 'm!rs':
+        case "m!rs":
             resetBot(message.channel);
             break;
     }
 };
 
 function resetBot(channel) {
-    message.channel.send('πx6÷2149-54+2948')
+    message.channel.send("πx6÷2149-54+2948")
     .then(msg => client.destroy())
     .then(() => client.login(process.env.BOT_TOKEN));
 }
