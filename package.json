@@ -1,14 +1,11 @@
 {
-  "name": "mac-bot",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Midnight",
+  "version": "0.0.0",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "MaC",
-  "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.2"
+    "discord.js": "11.3.2"
   }
 }
