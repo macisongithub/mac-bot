@@ -32,7 +32,7 @@ if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("<
 		
 		if(toMute.roles.has(role.id)) return message.channel.send(`:radioactive: Member **${toMute.user.tag}** is already muted!`);
 
-		bot.mutes[toMute.id] = {
+		client.mutes[toMute.id] = {
 			guild: message.guild.id,
 			time: Date.now() + parseInt(args[1]) * 1000
 		}
