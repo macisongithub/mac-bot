@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-exports.run = (bot, message, args, func) => {
+exports.run = (client, message, args, func) => {
 
 	const embed = new Discord.RichEmbed()
 		.setAuthor(message.author.username)
