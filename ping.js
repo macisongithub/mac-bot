@@ -1,4 +1,4 @@
-exports.run = (bot, message, args, func) => {
+exports.run = (client, message, args, func) => {
 
     func.ping(message.channel);
 
