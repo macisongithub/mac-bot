@@ -12,9 +12,9 @@ if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("<
 
 		await toMute.removeRole(role);
 
-			delete bot.mutes[toMute.id];
+			delete client.mutes[toMute.id];
 
-			fs.writeFile("./mutes.json", JSON.stringify(bot.mutes), err => {
+			fs.writeFile("./mutes.json", JSON.stringify(client.mutes), err => {
 				if(err) throw err;
 				console.log(`Successfully unmuted ${toMute.user.tag}.`);
 			});
