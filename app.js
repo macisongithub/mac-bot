@@ -58,7 +58,7 @@ bot.on('message', message => {
         console.log(`${message.author.username} ran the command: ${cmd}`);
     }
 
-     if (message.content.startsWith((prefix) + "eval")) {
+     if (message.content.startsWith("m!" + "eval")) {
     if(message.author.id !== "config.ownerID") return;
     try {
       const code = args.join(" ");
