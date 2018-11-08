@@ -9,7 +9,7 @@ const config = require("./config.json");
 const func = require('./functions.js');
 console.log(func)
 
-const commands = JSON.parse(fs.readFileSync('Storage/commands.json', 'utf8'));
+const commands = JSON.parse(fs.readFileSync('./commands.json', 'utf8'));
 
 const prefix = config.prefix;
 
