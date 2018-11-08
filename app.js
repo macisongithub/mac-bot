@@ -51,7 +51,7 @@ client.on('message', message => {
     // Command Handler
     try {
         let commandFile = require(`${cmd}.js`);
-        commandFile.run(client, message, args, func);
+        commandFile.run(bot, message, args, func);
     } catch (e) {
         console.log(e.message);
     } finally {
@@ -59,7 +59,7 @@ client.on('message', message => {
     }
 
      if (message.content.startsWith("m!" + "eval")) {
-    if(message.author.id !== "config.ownerID") return;
+    if(message.author.id !== "295978095129657355") return;
     try {
       const code = args.join(" ");
       let evaled = eval(code);
