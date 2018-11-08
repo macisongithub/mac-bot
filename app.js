@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const client = new Discord.Client();
 const fs = require('fs');
 const db = require('quick.db');
 const yt = require('ytdl-core');
@@ -13,9 +13,9 @@ const commands = JSON.parse(fs.readFileSync('./commands.json', 'utf8'));
 
 const prefix = config.prefix;
 
-bot.mutes = require("./mutes.json");
+client.mutes = require("./mutes.json");
 
-bot.on('message', message => {
+client.on('message', message => {
 
     if(message.content === "wat") {
     message.channel.send("Say what?"); 
@@ -50,8 +50,8 @@ bot.on('message', message => {
 
     // Command Handler
     try {
-        let commandFile = require(`./commands/${cmd}.js`);
-        commandFile.run(bot, message, args, func);
+        let commandFile = require(`${cmd}.js`);
+        commandFile.run(client, message, args, func);
     } catch (e) {
         console.log(e.message);
     } finally {
@@ -84,14 +84,14 @@ function clean(text) {
   }
 }
 
-bot.on('ready', () => {
+client.on('ready', () => {
 
-    console.log(`Launched. Defined as BOT. Username is ${bot.user.username}.`);
+    console.log(`Launched. Defined as BOT. Username is ${client.user.username}.`);
 
-    bot.user.setStatus('online')
-    bot.user.setGame(`m!help | ${bot.guilds.size} servers`)
+    client.user.setStatus('online')
+    client.user.setGame(`m!help | ${client.guilds.size} servers`)
 
-    bot.setInterval(() => {
+    client.setInterval(() => {
         for(let i in bot.mutes) {
             let time = bot.mutes[i].time;
             let guildId = bot.mutes[i].guild;
@@ -116,19 +116,19 @@ bot.on('ready', () => {
 
 });
 
-bot.on("guildCreate", guild => {
+client.on("guildCreate", guild => {
 
-  bot.guilds.get("387623524891623434").channels.get("393076814769160195").send(`:envelope_with_arrow: OAuth joined ${guild.name} (${guild.id}). I am now in ${bot.guilds.size}.`);
-  bot.user.setGame(`>>help | ${bot.guilds.size} servers`);
+  client.guilds.get("387623524891623434").channels.get("393076814769160195").send(`:envelope_with_arrow: OAuth joined ${guild.name} (${guild.id}). I am now in ${client.guilds.size}.`);
+  client.user.setGame(`>>help | ${client.guilds.size} servers`);
 });
 
-bot.on("guildDelete", guild => {
+client.on("guildDelete", guild => {
 
-  bot.guilds.get("387623524891623434").channels.get("393076814769160195").send(`:leaves: Left ${guild.name} (${guild.id}). I am now in ${bot.guilds.size}.`);
-  bot.user.setGame(`>>help | ${bot.guilds.size} servers`);
+  client.guilds.get("387623524891623434").channels.get("393076814769160195").send(`:leaves: Left ${guild.name} (${guild.id}). I am now in ${client.guilds.size}.`);
+  client.user.setGame(`>>help | ${client.guilds.size} servers`);
 });
 
-bot.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', member => {
 
     db.fetchObject(`autoRole_${member.guild.id}`).then(i => {
 
@@ -166,7 +166,7 @@ bot.on('guildMemberAdd', member => {
 
     })
 
-    bot.on('guildMemberRemove', member => {
+    client.on('guildMemberRemove', member => {
 
         db.fetchObject(`messageChannel_${member.guild.id}`).then(i => {
 
@@ -185,7 +185,7 @@ bot.on('guildMemberAdd', member => {
 
 })
 
-bot.on('messageDelete', async (message) => {
+client.on('messageDelete', async (message) => {
   const logs = message.guild.channels.find(channel => channel.name === "logs");
   if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
     message.guild.createChannel('logs', 'text');
@@ -206,4 +206,4 @@ bot.on('messageDelete', async (message) => {
   logs.send(`A message was deleted in ${message.channel.name} by ${user}`);
 })
 
-bot.login(config.token)
+client.login(config.token)
