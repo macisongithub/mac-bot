@@ -1,6 +1,6 @@
 const fs = require("fs")
 
-exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args) => {
 if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("<:no:408996763748270080> You must have the MANAGE_ROLES permission in this discord server to use this command!");
 
 		let toMute = message.guild.member(message.mentions.users.first()) || message.guild.member(args[0]);
