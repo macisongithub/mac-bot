@@ -4,14 +4,12 @@ const fs = require('fs');
 const db = require('quick.db');
 const yt = require('ytdl-core');
 
-const config = require("./config.json");
-
 const func = require('./functions.js');
 console.log(func)
 
 const commands = JSON.parse(fs.readFileSync('./commands.json', 'utf8'));
 
-const prefix = config.prefix;
+const prefix = "m!";
 
 client.mutes = require("./mutes.json");
 
@@ -46,7 +44,7 @@ client.on('message', message => {
 
     })
 
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith("m!")) return;
 
     // Command Handler
     try {
@@ -92,10 +90,10 @@ client.on('ready', () => {
     client.user.setGame(`m!help | ${client.guilds.size} servers`)
 
     client.setInterval(() => {
-        for(let i in bot.mutes) {
-            let time = bot.mutes[i].time;
-            let guildId = bot.mutes[i].guild;
-            let guild = bot.guilds.get(guildId);
+        for(let i in client.mutes) {
+            let time = client.mutes[i].time;
+            let guildId = client.mutes[i].guild;
+            let guild = client.guilds.get(guildId);
             let member = guild.members.get(i);
             let mutedRole = guild.roles.find(r => r.name === "Muted");
             if(!mutedRole) continue;
@@ -119,13 +117,13 @@ client.on('ready', () => {
 client.on("guildCreate", guild => {
 
   client.guilds.get("387623524891623434").channels.get("393076814769160195").send(`:envelope_with_arrow: OAuth joined ${guild.name} (${guild.id}). I am now in ${client.guilds.size}.`);
-  client.user.setGame(`>>help | ${client.guilds.size} servers`);
+  client.user.setGame(`m!help | ${client.guilds.size} servers`);
 });
 
 client.on("guildDelete", guild => {
 
   client.guilds.get("387623524891623434").channels.get("393076814769160195").send(`:leaves: Left ${guild.name} (${guild.id}). I am now in ${client.guilds.size}.`);
-  client.user.setGame(`>>help | ${client.guilds.size} servers`);
+  client.user.setGame(`m!help | ${client.guilds.size} servers`);
 });
 
 client.on('guildMemberAdd', member => {
@@ -206,4 +204,4 @@ client.on('messageDelete', async (message) => {
   logs.send(`A message was deleted in ${message.channel.name} by ${user}`);
 })
 
-client.login(config.token)
+client.login(process.env.BOT_TOKEN);
