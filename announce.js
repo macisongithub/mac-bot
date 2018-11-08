@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = (bot, message, args, func) => {
+exports.run = (client, message, args, func) => {
 	if(message.author.id !== "295978095129657355") return;
 
 		const embed = new Discord.RichEmbed()
