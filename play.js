@@ -1,6 +1,6 @@
 const yt = require('ytdl-core');
 
-exports.run = (bot, message, args, func) => {
+exports.run = (client, message, args, func) => {
 
 	 if (!message.member.roles.find("name", "DJ")) {
                 message.channel.send('You need the \`DJ\` role to use this command. This command is broken.');
