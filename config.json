@@ -1,5 +1,4 @@
 {
-  "token": "process.env.BOT_TOKEN",
   "prefix": "m!",
   "ownerID": "295978095129657355"
 }
