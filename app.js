@@ -56,7 +56,6 @@ function sleepBot(channel) {
 	const embed = new Discord.RichEmbed()
 	.setAuthor("Suggestion")
 	.setTitle(`New suggestion from ${message.author.tag} (${message.author.id})`)
-	.setTimestamp()
 	.addField("The suggestion is", suggestion)
 	.setColor(0x9F45FF);
 	const suggestionChannel = client.guilds.get("387623524891623434").channels.find(c => c.name === "suggestions");
