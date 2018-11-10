@@ -1,16 +1,16 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const bot = new Discord.Client();
 const fs = require("fs");
 
 const config = require("./config.json");
 
-client.on("ready", () => {
+bot.on("ready", () => {
   console.log(`Launched. Defined as BOT. Username is ${client.user.username}.`);
 });
 
 const prefix = config.prefix;
 
-client.on("message", (message) => {
+bot.on("message", (message) => {
   const args = message.content.split(" ").slice(1);
 
   if(message.content === "wat") {
@@ -98,4 +98,4 @@ function clean(text) {
   }
 }
 
-client.login(process.env.token);
+bot.login(process.env.token);
