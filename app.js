@@ -50,20 +50,6 @@ function sleepBot(channel) {
   .then(msg => client.destroy())
 }
 
-  if (message.content.startsWith(config.prefix) + "suggest") {
-	const suggestion = args.slice(0).join(" ");
-
-	const embed = new Discord.RichEmbed()
-	.setAuthor("Suggestion")
-	.setTitle(`New suggestion from ${message.author.tag} (${message.author.id})`)
-	.addField("The suggestion is", suggestion)
-	.setColor(0x9F45FF);
-	const suggestionChannel = client.guilds.get("387623524891623434").channels.find(c => c.name === "suggestions");
-
-	suggestionChannel.send({embed});
-	message.channel.send("Suggestion sent!").then(message => message.delete(100000));
-}
-
   if (message.content.startsWith(config.prefix + "skarff")) {
     if(message.author.id !== config.ownerID) return;
     message.channel.send("<@270252850121146369>")
