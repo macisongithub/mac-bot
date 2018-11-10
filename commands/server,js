@@ -1,6 +1,0 @@
-const Discord = require('discord.js');
-
-exports.run = (client, message, args, func) => {
-            
-            message.author.send("https://discord.gg/6PFN5f9")
-}
