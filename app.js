@@ -5,7 +5,7 @@ const fs = require("fs");
 const config = require("./config.json");
 
 bot.on("ready", () => {
-  console.log(`Launched. Defined as BOT. Username is ${client.user.username}.`);
+  console.log(`Launched. Defined as BOT. Username is ${bott.user.username}.`);
 });
 
 const prefix = config.prefix;
@@ -32,8 +32,8 @@ bot.on("message", (message) => {
 
 function resetBot(channel) {
     message.channel.send('πx6÷2149-54+2948')
-    .then(msg => client.destroy())
-    .then(() => client.login(config.token));
+    .then(msg => bot.destroy())
+    .then(() => bot.login(process.env.token));
 }
 
 if (message.content.startsWith(config.prefix + "deadify")) {
@@ -47,7 +47,7 @@ if (message.content.startsWith(config.prefix + "deadify")) {
 
 function sleepBot(channel) {
   message.channel.send('Commiting uninstall life.')
-  .then(msg => client.destroy())
+  .then(msg => bot.destroy())
 }
 
   if (message.content.startsWith(config.prefix + "skarff")) {
