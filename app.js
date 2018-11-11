@@ -49,7 +49,7 @@ client.on('message', message => {
 
     // Command Handler
     try {
-        let commandFile = require(`commands/${cmd}.js`);
+        let commandFile = require(`./commands/${cmd}.js`);
         commandFile.run(client, message, args, func);
     } catch (e) {
         console.log(e.message);
