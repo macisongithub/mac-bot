@@ -14,7 +14,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-    "engines": {
-  "node": "11.1.0"
-  },
 }
