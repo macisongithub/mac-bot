@@ -1,6 +1,9 @@
 {
   "name": "Midnight",
   "version": "1.0.0",
+  "engines": {
+  "node": "11.1.0"
+  }
   "description": "great bot",
   "main": "app.js",
   "dependencies": {
