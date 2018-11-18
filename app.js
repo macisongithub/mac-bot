@@ -74,19 +74,7 @@ function sleepBot(channel) {
     mention.send (mentionMessage);
   }
 
-  if (message.content.startsWith(config.prefix + "embedtest")) {
-
-  	if(message.author.id !== config.ownerID) return;
-
-		const embed = new Discord.RichEmbed()
-		.setAuthor(message.author.tag)
-		.setFooter("Test")
-		.setColor(0x9F45FF)
-
-        message.channel.send({embed});
-}
-
-  if (message.content.startsWith(processe.env.token + "eval")) {
+  if (message.content.startsWith(config.prefix + "eval")) {
     if(message.author.id !== config.ownerID) return;
     try {
         let codein = args.join(" ");
