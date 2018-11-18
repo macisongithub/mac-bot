@@ -35,7 +35,7 @@ client.on("message", async message => {
 function resetBot(channel) {
     message.channel.send('πx6÷2149-54+2948')
     .then(msg => client.destroy())
-    .then(() => client.login(config.token));
+    .then(() => client.login(process.env.token));
 }
 
 if (message.content.startsWith(config.prefix + "deadify")) {
@@ -86,7 +86,7 @@ function sleepBot(channel) {
         message.channel.send({embed});
 }
 
-  if (message.content.startsWith(config.prefix + "eval")) {
+  if (message.content.startsWith(processe.env.token + "eval")) {
     if(message.author.id !== config.ownerID) return;
     try {
         let codein = args.join(" ");
@@ -117,4 +117,4 @@ function clean(text) {
   }
 }
 
-client.login(config.token);
+client.login(process.env.token);
