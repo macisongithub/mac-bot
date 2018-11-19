@@ -64,6 +64,10 @@ function sleepBot(channel) {
   msg = message.content.toLowerCase();
 
   if (message.author.bot) return;
+  
+  if(message.content === "@Gay Slug") {
+    message.channel.send("<@514137432816484363>")
+  }
 
   mention = message.mentions.users.first();
 
