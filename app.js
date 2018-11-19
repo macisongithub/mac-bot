@@ -72,7 +72,7 @@ function sleepBot(channel) {
   if (message.author.bot) return;
   
   if(message.content === "@Gay Slug") {
-    message.channel.send("<@514137432816484363>")
+    message.channel.send("@Gay Slug")
   }
 
   mention = message.mentions.users.first();
