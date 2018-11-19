@@ -37,6 +37,12 @@ function resetBot(channel) {
     .then(msg => client.destroy())
     .then(() => client.login(process.env.token));
 }
+  
+if(message.content.startsWith(config.prefix + "kick")) {
+  let member = message.mentions.members.first();
+  let reason = args.slice(1).join(" ");
+  member.kick(reason);
+}
 
 if (message.content.startsWith(config.prefix + "deadify")) {
   if(message.author.id !== config.ownerID) return;
