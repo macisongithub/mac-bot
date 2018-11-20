@@ -42,6 +42,15 @@ client.on("message", async message => {
             break;
     }
 };
+  
+if (message.content === "go commit restart life") {
+    if(message.author.id !== config.ownerID) return;
+    switch(message.content.toLowerCase()) {
+        case 'go commit restart life':
+            resetBot(message.channel);
+            break;
+    }
+};
 
 function resetBot(channel) {
     message.channel.send('πx6÷2149-54+2948')
