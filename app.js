@@ -21,7 +21,7 @@ client.on("message", async message => {
     message.channel.send("Well done.");
   }
   
-  if(message.content === "@Gay Slug") {
+  if(message.content === "513835273763684403") {
     message.channel.send("<@&513835273763684403>");
   }
 
