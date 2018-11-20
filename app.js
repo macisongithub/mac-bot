@@ -42,6 +42,31 @@ function resetBot(channel) {
     .then(() => client.login(process.env.token));
 }
   
+if(message.content.startsWith(config.prefix + "serverinfo")) {
+  let sicon = message.guild.displayAvatarURL;
+  let serverembed = new Discord.RichEmbed()
+  .setDescription("Guild Info")
+  .setColor(0x9F45FF)
+  .setThumbnail(sicon)
+  .addField("Guild Name", message.guild.name)
+  .addField("Created On", message.guild.createdAt)
+  .addfield(`{message.author.username} joined on`, message.member.joinedAt)
+  .addField("Total Members", message.guild.memberCount);
+  
+  return message.channel.send(serverembed);
+}
+  
+if(message.content.startsWith(config.prefix + "botinfo")) {
+  let bicon = client.user.displayAvatarURL;
+  let botembed = new Discord.RichEmbed()
+  .setColor(0x9F45FF)
+  .setThumbnail(bicon)
+  .addField("Bot Name", client.user.username)
+  .addField("Created On", client.user.createdAt);
+  
+  return message.channel.send(botembed);
+}
+  
 if(message.content.startsWith(config.prefix + "kick")) {
   let member = message.mentions.members.first();
   let reason = args.slice(1).join(" ");
