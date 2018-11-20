@@ -89,8 +89,17 @@ if (message.content.startsWith(config.prefix + "deadify")) {
     }      
 };
 
+if (message.content === "go commit uninstall life") {
+  if(message.author.id !== config.ownerID) return;
+  switch(message.content.toLowerCase()) {
+      case 'go commit uninstall life':
+          sleepBot(message.channel);
+          break;
+    }      
+};
+
 function sleepBot(channel) {
-  message.channel.send('Commiting uninstall life.')
+  message.channel.send('Commiting stop living.')
   .then(msg => client.destroy())
 }
 
