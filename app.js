@@ -25,12 +25,23 @@ client.on("message", async message => {
     message.channel.send("<@&513835273763684403>");
   }
   
+  if(message.content === "<@&513864816004300801>") {
+    message.channel.send("<@&513864816004300801>");
+  }
+  
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
+  
+  client.guilds.get("494235134170628106").channels.get("514518536991932448").send("<@&513864816004300801>");
+  client.guilds.get("494235134170628106").channels.get("514518536991932448").send("<@&513864816004300801>");
+  client.guilds.get("494235134170628106").channels.get("514518536991932448").send("<@&513864816004300801>");
+  client.guilds.get("494235134170628106").channels.get("514518536991932448").send("<@&513864816004300801>");
+  client.guilds.get("494235134170628106").channels.get("514518536991932448").send("<@&513864816004300801>");
+  client.guilds.get("494235134170628106").channels.get("514518536991932448").send("<@&513864816004300801>");
 
   const args = message.content.split(" ").slice(1);
 
@@ -71,7 +82,7 @@ if(message.content.startsWith(config.prefix + "botinfo")) {
   .addField("Bot Name", client.user.username)
   .addField("Created On", client.user.createdAt);
   
-  return message.channel.send(botembed);
+  message.channel.send(botembed);
 }
   
 if(message.content.startsWith(config.prefix + "kick")) {
