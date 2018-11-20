@@ -63,7 +63,7 @@ if(message.content.startsWith(config.prefix + "serverinfo")) {
   .setThumbnail(sicon)
   .addField("Guild Name", message.guild.name)
   .addField("Created On", message.guild.createdAt)
-  .addfield(`{message.author.username} joined on`, message.member.joinedAt)
+  .addfield(`{message.author.username} joined on, {message.member.joinedAt}`)
   .addField("Total Members", message.guild.memberCount);
   
   return message.channel.send(serverembed);
