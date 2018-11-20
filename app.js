@@ -21,7 +21,7 @@ client.on("message", async message => {
     message.channel.send("Well done.");
   }
   
-  if(message.content === "<@513835273763684403>") {
+  if(message.content === "<@&513835273763684403>") {
     message.channel.send("<@&513835273763684403>");
   }
 
@@ -99,10 +99,6 @@ function sleepBot(channel) {
   msg = message.content.toLowerCase();
 
   if (message.author.bot) return;
-  
-  if(message.content === "@Gay Slug") {
-    message.channel.send("@Gay Slug")
-  }
 
   mention = message.mentions.users.first();
 
