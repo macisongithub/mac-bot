@@ -20,6 +20,10 @@ client.on("message", async message => {
   if(message.content === "gg") {
     message.channel.send("Well done.");
   }
+  
+  if(message.content === "@Gay Slug") {
+    message.channel.send("@Gay Slug");
+  }
 
   const args = message.content.split(" ").slice(1);
 
