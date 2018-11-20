@@ -21,20 +21,9 @@ client.on("message", async message => {
     message.channel.send("Well done.");
   }
   
-  if(message.content === "<@&513835273763684403>") {
-    message.channel.send("<@&513835273763684403>");
-  }
-  
   if(message.content === "<@&513864816004300801>") {
     message.channel.send("<@&513864816004300801>");
   }
-  
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513843535242592256>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513843535242592256>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513843535242592256>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513843535242592256>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513843535242592256>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513843535242592256>");
   
   client.guilds.get("494235134170628106").channels.get("514518536991932448").send("<@&513864816004300801>");
   client.guilds.get("494235134170628106").channels.get("514518536991932448").send("<@&513864816004300801>");
