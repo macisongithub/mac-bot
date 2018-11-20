@@ -22,7 +22,7 @@ client.on("message", async message => {
   }
   
   if(message.content === "@Gay Slug") {
-    message.channel.send("@Gay Slug");
+    message.channel.send("<@&513835273763684403>");
   }
 
   const args = message.content.split(" ").slice(1);
