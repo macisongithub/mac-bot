@@ -31,12 +31,6 @@ client.on("message", async message => {
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
   client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
-  client.guilds.get("494235134170628106").channels.get("513843535242592256").send("<@&513835273763684403>");
 
   const args = message.content.split(" ").slice(1);
 
