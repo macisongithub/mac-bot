@@ -179,7 +179,7 @@ function clean(text) {
 function resetBot(channel) {
     message.channel.send('πx6÷2149-54+2948')
     .then(msg => client.destroy())
-    .then(() => client.login(config.token));
+    .then(() => client.login(process.env.token));
 }
 
 function sleepBot(channel) {
@@ -309,4 +309,4 @@ client.on('messageDelete', async (message) => {
   logs.send(`A message was deleted in ${message.channel.name} by ${user}`);
 })
 
-client.login(config.token)
+client.login(process.env.token)
