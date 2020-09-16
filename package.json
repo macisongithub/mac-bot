@@ -7,7 +7,7 @@
     "discord.js": "^11.4.2",
     "ffmpeg": "0.0.4",
     "fs": "0.0.1-security",
-    "googleapis": "^35.0.0",
+    "googleapis": "^59.0.0",
     "node-fetch": "^2.2.1",
     "node-opus": "^0.3.1",
     "quick.db": "^7.0.0-b16",
